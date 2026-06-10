@@ -1,0 +1,39 @@
+.error-page {
+  min-height: calc(100vh - var(--header-h));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.error-page h1 {
+  font-family: var(--font-logo);
+  font-size: clamp(4rem, 15vw, 10rem);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.error-page p {
+  font-family: var(--font-zh);
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.error-page a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.75rem 2rem;
+  border: 1px solid var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.error-page a:hover {
+  background: var(--text);
+  color: var(--bg);
+}

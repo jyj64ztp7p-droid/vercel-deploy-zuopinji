@@ -1,0 +1,181 @@
+import { passive, prefersReducedMotion } from "./utils.js";
+
+function initNavFlicker(root = document) {
+  const links = root.querySelectorAll("[data-flicker]");
+  links.forEach((link) => {
+    if (link.dataset.flickerBound === "1") return;
+    link.dataset.flickerBound = "1";
+    link.addEventListener("mouseenter", () => {
+      if (prefersReducedMotion()) return;
+      link.classList.remove("is-flickering");
+      void link.offsetWidth;
+      link.classList.add("is-flickering");
+    });
+    link.addEventListener("animationend", (e) => {
+      if (e.animationName === "nav-flicker") link.classList.remove("is-flickering");
+    });
+    link.addEventListener("mouseleave", () => link.classList.remove("is-flickering"));
+  });
+}
+
+function initHamburger() {
+  const btn = document.querySelector(".hamburger");
+  const nav = document.querySelector(".mobile-nav");
+  if (!btn || !nav || btn.dataset.bound === "1") return;
+  btn.dataset.bound = "1";
+  btn.addEventListener("click", () => {
+    const open = btn.classList.toggle("is-active");
+    nav.classList.toggle("is-open", open);
+    btn.setAttribute("aria-expanded", String(open));
+    document.body.style.overflow = open ? "hidden" : "";
+  });
+  nav.querySelectorAll("a").forEach((a) => {
+    if (a.dataset.bound === "1") return;
+    a.dataset.bound = "1";
+    a.addEventListener("click", () => {
+      btn.classList.remove("is-active");
+      nav.classList.remove("is-open");
+      btn.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    });
+  });
+}
+
+function initMusicPlayer() {
+  let audio = document.querySelector("#bgm");
+  if (!audio) {
+    audio = document.createElement("audio");
+    audio.id = "bgm";
+    audio.loop = true;
+    audio.preload = "auto";
+    audio.src = "assets/audio/bgm.mp3";
+    audio.hidden = true;
+    audio.setAttribute("aria-hidden", "true");
+    document.body.prepend(audio);
+  }
+
+  const storageKey = "portfolio:music";
+  let restoreRequested = false;
+  let restoreTargetTime = 0;
+  let restoreShouldPlay = false;
+  let restoreApplied = false;
+
+  const saveState = () => {
+    sessionStorage.setItem(
+      storageKey,
+      JSON.stringify({
+        playing: !audio.paused && !audio.ended,
+        currentTime: audio.currentTime || 0,
+        savedAt: Date.now(),
+      }),
+    );
+  };
+
+  const applyRestore = () => {
+    if (!restoreRequested || restoreApplied) return;
+    if (!Number.isFinite(audio.duration) || audio.duration <= 0) return;
+    restoreApplied = true;
+    audio.currentTime = Math.max(0, Math.min(restoreTargetTime, Math.max(0, audio.duration - 0.1)));
+    if (restoreShouldPlay) audio.play().catch(() => {});
+    syncAll();
+  };
+
+  const requestRestore = () => {
+    try {
+      const state = JSON.parse(sessionStorage.getItem(storageKey) || "null");
+      if (!state) return false;
+      const elapsed = state.playing ? (Date.now() - state.savedAt) / 1000 : 0;
+      restoreTargetTime = Math.max(0, (state.currentTime || 0) + elapsed);
+      restoreShouldPlay = Boolean(state.playing);
+      restoreRequested = true;
+      restoreApplied = false;
+      return restoreShouldPlay;
+    } catch {
+      return false;
+    }
+  };
+
+  const players = [...document.querySelectorAll("[data-music-player], .site-header .music-player")];
+
+  const syncAll = () => {
+    const playing = !audio.paused && !audio.ended;
+    players.forEach((player) => {
+      const toggle = player.querySelector(".music-player__toggle");
+      if (!toggle) return;
+      player.classList.toggle("is-playing", playing);
+      toggle.setAttribute("aria-label", playing ? "Pause music" : "Play music");
+    });
+    saveState();
+  };
+
+  const playAudio = async () => {
+    await audio.play();
+    syncAll();
+  };
+
+  const togglePlayback = async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    try {
+      if (audio.paused || audio.ended) await playAudio();
+      else audio.pause();
+      syncAll();
+    } catch {
+      syncAll();
+    }
+  };
+
+  players.forEach((player) => {
+    const toggle = player.querySelector(".music-player__toggle");
+    if (!toggle || toggle.dataset.bound === "1") return;
+    toggle.dataset.bound = "1";
+    toggle.addEventListener("click", togglePlayback);
+  });
+
+  if (!audio.dataset.bound) {
+    audio.dataset.bound = "1";
+    window.addEventListener("pagehide", saveState);
+    window.addEventListener("beforeunload", saveState);
+    window.addEventListener("pageshow", () => {
+      requestRestore();
+      applyRestore();
+    });
+    audio.addEventListener("loadedmetadata", applyRestore);
+    audio.addEventListener("canplay", applyRestore);
+    audio.addEventListener("play", syncAll);
+    audio.addEventListener("pause", syncAll);
+    audio.addEventListener("timeupdate", saveState);
+    audio.addEventListener("ended", syncAll);
+  }
+
+  const shouldResume = requestRestore();
+  if (shouldResume) {
+    applyRestore();
+    if (!restoreApplied) {
+      audio.addEventListener("loadedmetadata", applyRestore, { once: true });
+      audio.addEventListener("canplay", applyRestore, { once: true });
+    }
+  } else {
+    syncAll();
+  }
+}
+
+function setupGlobalNav() {
+  const pages = ["index.html", "works-index.html", "about.html", "project-detail-1.html", "project-detail-2.html", "project-detail-3.html", "project-detail-4.html", "project-detail-5.html"];
+  document.querySelectorAll(pages.map((p) => `a[href='${p}']`).join(", ")).forEach((a) => {
+    a.style.cursor = "pointer";
+  });
+}
+
+function boot() {
+  initNavFlicker();
+  initHamburger();
+  initMusicPlayer();
+  setupGlobalNav();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", boot, { once: true });
+} else {
+  boot();
+}

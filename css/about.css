@@ -1,0 +1,115 @@
+/* Figma 1.8 About — 1920 × 992 画布 */
+.page-about {
+  --design-w: 1920;
+  --design-h: 992;
+  --about-scale: 1;
+}
+
+.page-about main.about-page {
+  padding-top: 0;
+  min-height: calc(var(--design-h) * var(--about-scale));
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.about-canvas {
+  position: relative;
+  width: 1920px;
+  height: 992px;
+  flex-shrink: 0;
+  transform: scale(var(--about-scale));
+  transform-origin: top center;
+}
+
+.about__layer {
+  position: absolute;
+  display: block;
+  max-width: none;
+  pointer-events: none;
+}
+
+/* 1.8gif01 — 与 Rectangle 1734 重叠 -103px */
+.about__gif01 {
+  left: -4.25px;
+  top: 139.73px;
+  width: 1924.245px;
+  height: 600.805px;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.about__pic03 {
+  left: 0;
+  top: 577.7px;
+  width: 1285.285px;
+  height: 415.092px;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.about__gif02 {
+  left: 65.92px;
+  top: 234.41px;
+  width: 245.583px;
+  height: 308.123px;
+  object-fit: cover;
+  z-index: 3;
+}
+
+/* Rectangle 1734 — top 637.22, 与 gif01 底部重叠 103px */
+.about__card {
+  left: 171.844px;
+  top: 637.22px;
+  width: 1576.313px;
+  height: 343.486px;
+  border-radius: 36px;
+  background: rgba(255, 255, 255, 0.23);
+  backdrop-filter: blur(16.8px);
+  -webkit-backdrop-filter: blur(16.8px);
+  z-index: 4;
+}
+
+.about__pic01 {
+  left: 111px;
+  top: 440.13px;
+  width: 503px;
+  height: 218px;
+  object-fit: cover;
+  z-index: 5;
+}
+
+.about__pic02 {
+  left: 371.5px;
+  top: 705.71px;
+  width: 1177px;
+  height: 206.5px;
+  object-fit: cover;
+  z-index: 6;
+}
+
+@media (max-width: 1024px) {
+  .about__pic02 {
+    width: min(1177px, calc(100% - 371.5px));
+  }
+}
+
+@media (max-width: 767px) {
+  .page-about main.about-page {
+    overflow-x: auto;
+  }
+
+  .about-canvas {
+    min-width: 1920px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about__card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.85);
+  }
+}
