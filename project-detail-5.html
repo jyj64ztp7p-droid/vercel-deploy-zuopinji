@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>潮玩品牌 — PORTFOLIO</title>
+  <meta name="description" content="Collectible toy brand visual design case study.">
+  <meta property="og:image" content="assets/images/home-carousel-1.6.png">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asul&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/project-detail.css">
+  <link rel="stylesheet" href="css/project-detail-composites.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html" class="site-header__logo">PORTFOLIO</a>
+    <div class="site-header__tools">
+      <div class="music-player" data-music-player>
+        <button type="button" class="music-player__toggle" aria-label="Play music">
+          <span class="music-player__icon music-player__icon--play" aria-hidden="true">
+            <img src="assets/images/play-icon.svg" alt="" width="15" height="15">
+          </span>
+          <span class="music-player__icon music-player__icon--pause" aria-hidden="true"></span>
+        </button>
+        <img src="assets/images/music-cover.png" alt="" class="music-player__cover" width="51" height="51">
+        <div class="music-player__marquee" aria-label="Now playing: elephant survival">
+          <div class="music-player__marquee-track">
+            <span>elephant survival</span>
+            <span aria-hidden="true">elephant survival</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="site-header__nav" aria-label="Main">
+      <a href="works-index.html" data-flicker>INDEX</a>
+      <a href="about.html" data-flicker>ABOUT</a>
+      <a href="about.html"><img src="assets/images/avatar.png" alt="Profile" class="site-header__avatar" width="55" height="55"></a>
+    </nav>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="mobile-nav" aria-label="Mobile">
+    <a href="works-index.html">INDEX</a>
+    <a href="about.html">ABOUT</a>
+  </nav>
+
+  <main class="project-detail">
+    <aside class="project-detail__left">
+      <a href="index.html" class="project-detail__close" aria-label="Close"></a>
+      <div class="project-detail__thumb">
+        <img src="assets/images/detail5-left.png" alt="1.6 潮玩 preview" width="786" height="594" loading="lazy">
+      </div>
+    </aside>
+    <article class="project-detail__right">
+      <div class="pd-stack pd-stack--5">
+        <img class="pd-layer pd-layer--block" src="assets/images/detail5-right-title.png" alt="潮玩品牌 title" width="1134" height="952" loading="lazy">
+        <img class="pd-layer pd-layer--block" src="assets/images/detail5-right-pic01.png" alt="潮玩品牌 content 1" width="1134" height="1391" loading="lazy">
+        <img class="pd-layer pd-layer--block" src="assets/images/detail5-right-pic02.png" alt="潮玩品牌 content 2" width="1133" height="999" loading="lazy">
+        <div class="pd-gif-slot pd-gif-slot--5" aria-hidden="true">
+          <img class="pd-layer pd-layer--gif pd-layer--gif-b" src="assets/gifs/detail5-gif-galaxy.gif" alt="" width="397" height="434" loading="lazy">
+        </div>
+        <img class="pd-layer pd-layer--block" src="assets/images/1.6right_pic03.png" alt="潮玩品牌 content 3" width="1134" height="2125" loading="lazy">
+        <img class="pd-layer pd-layer--block" src="assets/images/detail5-right-pic04.png" alt="潮玩品牌 content 4" width="1134" height="3374" loading="lazy">
+        <img class="pd-layer pd-layer--gif pd-layer--gif-a" src="assets/gifs/detail5-gif-statue.gif" alt="" width="271" height="271" loading="lazy">
+      </div>
+    </article>
+    <a href="index.html" class="project-detail__back">← Back</a>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/project-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小程序设计 — PORTFOLIO</title>
+  <meta name="description" content="Mini program UI design portfolio case study.">
+  <meta property="og:image" content="assets/images/home-carousel-1.3.png">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asul&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/project-detail.css">
+  <link rel="stylesheet" href="css/project-detail-composites.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html" class="site-header__logo">PORTFOLIO</a>
+    <nav class="site-header__nav" aria-label="Main">
+      <a href="works-index.html" data-flicker>INDEX</a>
+      <a href="about.html" data-flicker>ABOUT</a>
+      <a href="about.html"><img src="assets/images/avatar.png" alt="Profile" class="site-header__avatar" width="55" height="55"></a>
+    </nav>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="mobile-nav" aria-label="Mobile">
+    <a href="works-index.html">INDEX</a>
+    <a href="about.html">ABOUT</a>
+  </nav>
+
+  <main class="project-detail">
+    <aside class="project-detail__left">
+      <a href="index.html" class="project-detail__close" aria-label="Close"></a>
+      <div class="project-detail__thumb">
+        <img src="assets/images/detail2-left.png" alt="1.3 小程序 preview" width="785" height="609" loading="lazy">
+      </div>
+    </aside>
+    <article class="project-detail__right">
+      <div class="pd-stack pd-stack--2">
+        <div class="pd-stack-mobile__headline pd-stack-mobile__headline--2">
+          <h1>Mini Program Design</h1>
+          <span class="pd-stack-mobile__tag">小程序设计</span>
+          <p>以移动端小程序为核心，通过清晰的信息层级、统一的视觉语言和高频交互组件，提升用户在不同业务场景下的操作效率与浏览体验。</p>
+        </div>
+        <img class="pd-layer pd-layer--block pd-layer--block--wide" src="assets/images/detail2-right-01.png" alt="Mini program intro" width="1095" height="622" loading="lazy">
+        <img class="pd-layer pd-layer--block" src="assets/images/detail2-right-pic1.png" alt="Mini program screens 1" width="1134" height="1727" loading="lazy">
+        <img class="pd-layer pd-layer--block" src="assets/images/detail2-right-pic2.png" alt="Mini program screens 2" width="1134" height="1181" loading="lazy">
+        <img class="pd-layer pd-layer--block" src="assets/images/detail2-right-pic3.png" alt="Mini program screens 3" width="1134" height="2432" loading="lazy">
+        <img class="pd-layer pd-layer--bg" src="assets/images/detail2-right-bg.png" alt="" width="1134" height="1031" loading="lazy">
+        <img class="pd-layer pd-layer--gif pd-layer--gif-head" src="assets/gifs/detail2-gif-01.gif" alt="" width="246" height="308" loading="lazy">
+        <img class="pd-layer pd-layer--gif pd-layer--gif-foot" src="assets/gifs/detail2-gif-2.gif" alt="" width="1012" height="522" loading="lazy">
+      </div>
+    </article>
+    <a href="index.html" class="project-detail__back">← Back</a>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/project-detail.js"></script>
+</body>
+</html>
