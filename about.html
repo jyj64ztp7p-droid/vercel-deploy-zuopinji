@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — 郑琪 — PORTFOLIO</title>
+  <meta name="description" content="Contact 郑琪 — UI/UX Designer. Tel 13522009378. Portfolio contact page.">
+  <meta property="og:title" content="Contact Me — PORTFOLIO">
+  <meta property="og:description" content="UI/UX Designer 郑琪 — Get in touch for collaboration.">
+  <meta property="og:type" content="profile">
+  <meta property="og:image" content="assets/images/about-pic01.png">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asul&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/about.css">
+</head>
+<body class="page-about">
+  <header class="site-header">
+    <a href="index.html" class="site-header__logo">PORTFOLIO</a>
+    <div class="site-header__tools">
+      <div class="music-player" data-music-player>
+        <button type="button" class="music-player__toggle" aria-label="Play music">
+          <span class="music-player__icon music-player__icon--play" aria-hidden="true">
+            <img src="assets/images/play-icon.svg" alt="" width="15" height="15">
+          </span>
+          <span class="music-player__icon music-player__icon--pause" aria-hidden="true"></span>
+        </button>
+        <img src="assets/images/music-cover.png" alt="" class="music-player__cover" width="51" height="51">
+        <div class="music-player__marquee" aria-label="Now playing: elephant survival">
+          <div class="music-player__marquee-track">
+            <span>elephant survival</span>
+            <span aria-hidden="true">elephant survival</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="site-header__nav" aria-label="Main">
+      <a href="works-index.html" data-flicker>INDEX</a>
+      <a href="about.html" data-flicker>ABOUT</a>
+      <a href="about.html"><img src="assets/images/avatar.png" alt="Profile" class="site-header__avatar" width="55" height="55"></a>
+    </nav>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="mobile-nav" aria-label="Mobile">
+    <a href="works-index.html">INDEX</a>
+    <a href="about.html">ABOUT</a>
+  </nav>
+  <audio id="bgm" loop preload="none" src="assets/audio/bgm.mp3"></audio>
+
+  <main class="about-page">
+    <div class="about-canvas">
+      <img class="about__layer about__gif01" src="assets/gifs/about-gif01.gif" alt="" width="1924" height="601" loading="lazy">
+      <img class="about__layer about__pic03" src="assets/images/about-pic03.png" alt="" width="1285" height="415" loading="lazy">
+      <img class="about__layer about__gif02" src="assets/gifs/about-gif02.gif" alt="" width="246" height="308" loading="lazy">
+      <div class="about__layer about__card" aria-hidden="true"></div>
+      <img class="about__layer about__pic01" src="assets/images/about-pic01.png" alt="UI/UX Designer" width="503" height="218" loading="lazy">
+      <img class="about__layer about__pic02" src="assets/images/about-pic02.png" alt="Contact Me" width="1177" height="207" loading="lazy">
+    </div>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/about.js"></script>
+</body>
+</html>

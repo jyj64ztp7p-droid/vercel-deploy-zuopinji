@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PORTFOLIO — Interface Universe</title>
+  <meta name="description" content="UI/UX portfolio by 郑琪 — App, web, and visual design crafting clear, warm digital experiences.">
+  <meta property="og:title" content="PORTFOLIO — Interface Universe">
+  <meta property="og:description" content="专注于 App、网页与视觉设计，打造清晰而有温度的数字体验。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/home-carousel-1.2.webp">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asul&family=Chakra+Petch:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css?v=20260607-46">
+  <link rel="stylesheet" href="css/home.css?v=20260607-46">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script type="module" src="js/utils.js?v=20260607-46"></script>
+  <script type="module" src="js/main.js?v=20260607-46"></script>
+  <script type="module" src="js/home.js?v=20260607-46"></script>
+</head>
+<body class="page-home">
+  <nav class="mobile-nav" aria-label="Mobile">
+    <a href="works-index.html">INDEX</a>
+    <a href="about.html">ABOUT</a>
+  </nav>
+  <audio id="bgm" loop preload="metadata" src="assets/audio/bgm.mp3"></audio>
+
+  <main class="home">
+    <div class="home-canvas">
+      <img src="assets/images/home-bg.png" alt="" class="home-canvas__bg" width="1920" height="1080" decoding="async">
+
+      <header class="site-header">
+        <a href="index.html" class="site-header__logo">PORTFOLIO</a>
+        <nav class="site-header__nav" aria-label="Main">
+          <a href="works-index.html" data-flicker>INDEX</a>
+          <a href="about.html" data-flicker>ABOUT</a>
+          <a href="about.html"><img src="assets/images/avatar.png" alt="Profile" class="site-header__avatar" width="55" height="55"></a>
+        </nav>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </header>
+
+      <div class="music-player home-music" data-music-player>
+        <button type="button" class="music-player__toggle" aria-label="Play music">
+          <span class="music-player__icon music-player__icon--play" aria-hidden="true">
+            <img src="assets/images/play-icon.svg" alt="" width="15" height="15">
+          </span>
+          <span class="music-player__icon music-player__icon--pause" aria-hidden="true"></span>
+        </button>
+        <img src="assets/images/music-cover.png" alt="" class="music-player__cover" width="51" height="51">
+        <div class="music-player__marquee" aria-label="Now playing: elephant survival">
+          <div class="music-player__marquee-track">
+            <span>elephant survival</span>
+            <span aria-hidden="true">elephant survival</span>
+          </div>
+        </div>
+      </div>
+
+      <section class="home-hero" aria-label="Hero">
+        <div class="home-hero__foreground" aria-hidden="false">
+          <button type="button" class="home-title-trigger" aria-label="Replay title animation"></button>
+          <div class="home-hero__title-wrap home_title" data-title-anim aria-label="home title" style="top:0;">
+            <p class="home-title__line home-title__line--designing" style="left:92px;top:189px;width:599px;height:85px;font-family:'Asul', serif;font-style:normal;font-weight:700;font-size:100px;line-height:85px;display:flex;align-items:center;letter-spacing:1px;text-transform:uppercase;color:#000;white-space:nowrap;">
+              <span class="home-title__word home-title__word--designing" data-scramble-text="DESIGNING">DESIGNING</span>
+            </p>
+            <p class="home-title__line home-title__line--interface" style="left:92px;top:288px;width:260px;height:90px;font-family:'DM Serif Display', serif;font-style:italic;font-weight:400;font-size:40px;line-height:45px;display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;letter-spacing:1px;text-transform:capitalize;color:#000;white-space:nowrap;">
+              <span class="home-title__word home-title__word--interface" data-scramble-text="Interface">Interface</span>
+              <span class="home-title__word home-title__word--punct" aria-hidden="true" style="display:block;white-space:nowrap;margin-left:0;">Universe .</span>
+            </p>
+            <img src="assets/images/gif-home.png" alt="" class="home-title__icon" width="99.88" height="67.86" style="left:706.64px;top:198.53px;position:absolute;z-index:3;pointer-events:none;width:99.88px;height:67.86px;">
+            <p class="home-title__line home-title__line--meta" style="left:292px;top:333.12px;width:399px;height:42px;font-family:'Chakra Petch', sans-serif;font-style:normal;font-weight:500;font-size:15px;line-height:21px;display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;letter-spacing:1px;text-transform:uppercase;color:#000;white-space:normal;overflow:hidden;">
+              <span class="home-title__word home-title__word--meta" data-scramble-text="专注于 App、网页与视觉设计，" style="display:block;white-space:nowrap;line-height:21px;">专注于 App、网页与视觉设计，</span>
+              <span class="home-title__word home-title__word--meta" data-scramble-text="通过结构、交互与视觉，打造清晰而有温度的数字体验。" style="display:block;white-space:nowrap;line-height:21px;">通过结构、交互与视觉，打造清晰而有温度的数字体验。</span>
+            </p>
+            <p class="home-title__line home-title__line--brand" style="left:579px;top:164.98px;width:112px;height:18px;font-family:'Asul', serif;font-style:normal;font-weight:700;font-size:15px;line-height:18px;display:flex;align-items:center;letter-spacing:1px;text-transform:uppercase;color:#E96D5A;white-space:nowrap;">
+              <span class="home-title__word home-title__word--brand" data-scramble-text="Better Off®">Better Off®</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-gallery-wrap" aria-label="Featured projects">
+        <div class="home-gallery">
+          <div class="home-gallery__viewport">
+            <div class="home-gallery__track">
+              <a href="project-detail-1.html" class="home-gallery__slide" aria-label="1.2 官网和大屏02">
+                <span class="home-gallery__slide-inner">
+                  <img src="assets/images/home-carousel-1.2.webp" alt="" width="1180" height="662" loading="lazy">
+                </span>
+              </a>
+              <a href="project-detail-2.html" class="home-gallery__slide" aria-label="1.3 小程序">
+                <span class="home-gallery__slide-inner">
+                  <img src="assets/images/home-carousel-1.3.webp" alt="" width="1180" height="662" loading="lazy">
+                </span>
+              </a>
+              <a href="project-detail-3.html" class="home-gallery__slide" aria-label="1.4 官网">
+                <span class="home-gallery__slide-inner">
+                  <img src="assets/images/home-carousel-1.4.webp" alt="" width="1180" height="662" loading="lazy">
+                </span>
+              </a>
+              <a href="project-detail-4.html" class="home-gallery__slide home-gallery__slide--web3" aria-label="1.5 web3">
+                <span class="home-gallery__slide-inner">
+                  <img class="home-gallery__slide-base" src="assets/images/home-carousel-1.5.webp" alt="" width="1180" height="662" loading="lazy">
+                  <span class="home-gallery__slide-deco-clip" aria-hidden="true">
+                    <img src="assets/gifs/home-carousel-1.5-deco.gif" alt="" loading="lazy">
+                  </span>
+                </span>
+              </a>
+              <a href="project-detail-5.html" class="home-gallery__slide" aria-label="1.6 潮玩">
+                <span class="home-gallery__slide-inner">
+                  <img src="assets/images/home-carousel-1.6.webp" alt="" width="1180" height="662" loading="lazy">
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="home-timeline" aria-hidden="true">
+        <img src="assets/images/timeline-frame5.svg" alt="" width="405" height="17">
+        <img src="assets/images/timeline-frame5.svg" alt="" width="405" height="17">
+        <img src="assets/images/timeline-frame6.svg" alt="" width="405" height="17">
+        <img src="assets/images/timeline-frame5.svg" alt="" width="405" height="17">
+        <img src="assets/images/timeline-frame6.svg" alt="" width="405" height="17">
+        <img src="assets/images/timeline-frame5.svg" alt="" width="405" height="17">
+        <img src="assets/images/timeline-frame6.svg" alt="" width="405" height="17">
+      </div>
+    </div>
+  </main>
+</body>
+</html>

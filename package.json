@@ -1,0 +1,10 @@
+{
+  "name": "portfolio-static-preview",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static local preview server for the portfolio site.",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  }
+}

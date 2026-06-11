@@ -1,0 +1,131 @@
+body.project-detail-mobile-page {
+  margin: 0;
+  background: #F9F7F3;
+  color: #111;
+}
+
+.mobile-case {
+  width: 100%;
+  min-height: 100vh;
+  background: #F9F7F3;
+  overflow-x: hidden;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+
+.mobile-case__hero {
+  padding: 0;
+}
+
+.mobile-case__hero--sticky {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #F9F7F3;
+}
+
+.mobile-case__hero-frame {
+  width: 390px;
+  height: 240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #F9F7F3;
+}
+
+.mobile-case__hero-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.mobile-case__intro {
+  padding: 18px 20px 0;
+}
+
+.mobile-case__intro-title {
+  max-width: 320px;
+}
+
+.mobile-case__tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  min-height: 24px;
+  padding: 0 10px;
+  background: #D4FF3D;
+  color: #111;
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.mobile-case__intro-title p {
+  margin: 10px 0 0;
+  font-size: 13px;
+  line-height: 1.66;
+  color: #2a2a2a;
+}
+
+.mobile-case__section {
+  padding: 18px 20px 0;
+}
+
+.mobile-case__section--stack {
+  display: grid;
+  gap: 14px;
+}
+
+.mobile-case__section--media {
+  display: grid;
+  gap: 16px;
+  padding-bottom: 44px;
+}
+
+.mobile-case__image,
+.mobile-case__gif {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mobile-case__image--offset-down {
+  position: relative;
+  z-index: 30;
+  transform: translateY(-400px);
+}
+
+.mobile-case__image--bg-offset {
+  position: relative;
+  z-index: 1;
+  transform: translateY(900px);
+}
+
+.mobile-case__gif--head {
+  width: 72%;
+  margin: 400px auto 0;
+}
+
+.mobile-case__gif--foot {
+  width: 100%;
+}
+
+@media (max-width: 430px) {
+  .mobile-case__hero-frame {
+    width: 100%;
+    height: 240px;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-case {
+    max-width: 430px;
+    margin: 0 auto;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.04);
+  }
+}

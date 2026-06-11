@@ -1,0 +1,212 @@
+/* Figma 项目分组 — 组内绝对定位，禁止拆组/拉伸 */
+
+.home-gallery__group {
+  position: relative;
+  flex-shrink: 0;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.home-gallery__group-inner,
+.project-detail__thumb-composite {
+  position: relative;
+}
+
+.project-detail__thumb-composite {
+  width: 100%;
+  height: 100%;
+}
+
+.home-gallery__group-inner .home-gallery__clip,
+.project-detail__thumb-composite img {
+  position: absolute;
+  display: block;
+  overflow: hidden;
+}
+
+.home-gallery__group-inner .home-gallery__clip img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+.project-detail__thumb-composite img {
+  max-width: none;
+}
+
+/* 1.2 官网和大屏02 — 1163×545 */
+.home-gallery__group--1,
+.project-detail__thumb-composite--1 {
+  width: 1163px;
+  height: 545px;
+}
+
+.home-gallery__group--1 .home-gallery__clip--main,
+.project-detail__thumb-composite--1 .home-gallery__img--main {
+  left: 180px;
+  top: 58px;
+  width: 736px;
+  height: 487px;
+}
+
+.home-gallery__group--1 .home-gallery__clip--right,
+.project-detail__thumb-composite--1 .home-gallery__img--right {
+  left: 938px;
+  top: 181px;
+  width: 226px;
+  height: 364px;
+}
+
+.home-gallery__group--1 .home-gallery__clip--left,
+.project-detail__thumb-composite--1 .home-gallery__img--left {
+  left: 0;
+  top: 215px;
+  width: 226px;
+  height: 297px;
+}
+
+/* 1.3 小程序 — 870×609 */
+.home-gallery__group--2,
+.project-detail__thumb-composite--2 {
+  width: 870px;
+  height: 609px;
+}
+
+.home-gallery__group--2 .home-gallery__clip--tall,
+.project-detail__thumb-composite--2 .home-gallery__img--tall {
+  left: 0;
+  top: 0;
+  width: 475px;
+  height: 608px;
+}
+
+.home-gallery__group--2 .home-gallery__clip--small,
+.project-detail__thumb-composite--2 .home-gallery__img--small {
+  left: 497px;
+  top: 353px;
+  width: 373px;
+  height: 256px;
+}
+
+.home-gallery__group--2 .home-gallery__clip--card,
+.project-detail__thumb-composite--2 .home-gallery__img--card {
+  left: 423px;
+  top: 68px;
+  width: 358px;
+  height: 250px;
+}
+
+/* 1.4 官网 — 1410×551 */
+.home-gallery__group--3,
+.project-detail__thumb-composite--3 {
+  width: 1410px;
+  height: 551px;
+}
+
+.home-gallery__group--3 .home-gallery__clip--left,
+.project-detail__thumb-composite--3 .home-gallery__img--left {
+  left: 0;
+  top: 154px;
+  width: 706px;
+  height: 397px;
+}
+
+.home-gallery__group--3 .home-gallery__clip--center,
+.project-detail__thumb-composite--3 .home-gallery__img--center {
+  left: 727px;
+  top: 0;
+  width: 432px;
+  height: 551px;
+}
+
+.home-gallery__group--3 .home-gallery__clip--side,
+.project-detail__thumb-composite--3 .home-gallery__img--side {
+  left: 1178px;
+  top: 154px;
+  width: 231px;
+  height: 397px;
+}
+
+/* 1.5 web3 — 1116×662 */
+.home-gallery__group--4,
+.project-detail__thumb-composite--4 {
+  width: 1116px;
+  height: 662px;
+}
+
+.home-gallery__group--4 .home-gallery__clip--wide,
+.project-detail__thumb-composite--4 .home-gallery__img--wide {
+  left: 0;
+  top: 284px;
+  width: 694px;
+  height: 378px;
+}
+
+.home-gallery__group--4 .home-gallery__clip--tilt,
+.project-detail__thumb-composite--4 .home-gallery__img--tilt {
+  left: 270px;
+  top: 25px;
+  width: 275px;
+  height: 285px;
+}
+
+.home-gallery__group--4 .home-gallery__clip--portrait,
+.project-detail__thumb-composite--4 .home-gallery__img--portrait {
+  left: 716px;
+  top: 217px;
+  width: 400px;
+  height: 445px;
+}
+
+.home-gallery__group--4 .home-gallery__clip--banner,
+.project-detail__thumb-composite--4 .home-gallery__img--banner {
+  left: 625px;
+  top: 86px;
+  width: 488px;
+  height: 110px;
+}
+
+/* 1.6 潮玩 — 1354×618 */
+.home-gallery__group--5,
+.project-detail__thumb-composite--5 {
+  width: 1354px;
+  height: 618px;
+}
+
+.home-gallery__group--5 .home-gallery__clip--left,
+.project-detail__thumb-composite--5 .home-gallery__img--left {
+  left: 0;
+  top: 116px;
+  width: 365px;
+  height: 504px;
+}
+
+.home-gallery__group--5 .home-gallery__clip--wide,
+.project-detail__thumb-composite--5 .home-gallery__img--wide {
+  left: 743px;
+  top: 276px;
+  width: 611px;
+  height: 344px;
+}
+
+.home-gallery__group--5 .home-gallery__clip--tall,
+.project-detail__thumb-composite--5 .home-gallery__img--tall {
+  left: 386px;
+  top: 24px;
+  width: 335px;
+  height: 596px;
+}
+
+.home-gallery__group--5 .home-gallery__clip--small,
+.project-detail__thumb-composite--5 .home-gallery__img--small {
+  left: 743px;
+  top: 137px;
+  width: 113px;
+  height: 111px;
+}

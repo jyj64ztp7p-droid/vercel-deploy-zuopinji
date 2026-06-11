@@ -1,0 +1,206 @@
+/* Figma 详情页 — 左栏 785px sticky，右侧合成图滚动 */
+
+.project-detail {
+  display: block;
+  min-height: calc(100vh - var(--header-h));
+  align-items: start;
+}
+
+.project-detail__left {
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  width: 785px;
+  height: calc(100vh - var(--header-h));
+  min-height: calc(100vh - var(--header-h));
+  padding-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--divider);
+  background: var(--bg);
+  z-index: 10;
+  overflow: hidden;
+  box-sizing: border-box;
+  cursor: none;
+}
+
+.project-detail__left,
+.project-detail__left * {
+  cursor: none !important;
+}
+
+.project-detail__thumb {
+  position: relative;
+  width: 785px;
+  flex: 0 0 auto;
+}
+
+.project-detail__left::before,
+.project-detail__left::after {
+  display: none;
+}
+
+.project-detail__cursor-label {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate3d(var(--x, 0px), var(--y, 0px), 0);
+  transition: opacity 0.12s ease;
+  will-change: transform;
+}
+
+.project-detail__cursor-label.is-visible {
+  opacity: 1;
+}
+
+.project-detail__cursor-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: #e84f49;
+  flex: 0 0 auto;
+}
+
+.project-detail__cursor-text {
+  color: #111;
+  font-family: inherit;
+  font-size: 26px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: none;
+}
+
+.project-detail__thumb img {
+  display: block;
+  width: 785px;
+  height: auto;
+  max-width: none;
+}
+
+.project-detail__close {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: transparent;
+  color: transparent;
+  font-size: 0;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+.project-detail__close:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -4px;
+}
+
+.project-detail__right {
+  padding: 0;
+  position: relative;
+  min-width: 0;
+  overflow: visible;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.project-detail__right::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--divider);
+}
+
+.project-detail__back {
+  display: none;
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 100;
+  background: var(--text);
+  color: var(--bg);
+  padding: 0.75rem 1.25rem;
+  min-height: 44px;
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.project-detail-page--web3 .project-detail {
+  display: block;
+  min-height: calc(100vh - var(--header-h));
+  padding-bottom: 16rem;
+}
+
+body.project-detail-page--web3 .project-detail__left {
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  height: calc(100vh - var(--header-h));
+}
+
+body.project-detail-page--web3 .project-detail__right {
+  margin-left: 785px;
+  padding-bottom: 16rem;
+  justify-content: flex-start;
+}
+
+body.project-detail-page--web3 .project-detail__right::before {
+  position: fixed;
+  left: 785px;
+  top: var(--header-h);
+  bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  .project-detail {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .project-detail__left {
+    position: sticky;
+    top: var(--header-h);
+    width: 100%;
+    min-height: 0;
+    height: auto;
+    padding-top: 0;
+    cursor: pointer;
+    border-right: 0;
+    border-bottom: 1px solid var(--divider);
+    z-index: 20;
+    align-items: center;
+  }
+
+  .project-detail__thumb {
+    width: 100%;
+    max-width: 785px;
+    margin: 0 auto;
+  }
+
+  .project-detail__thumb img {
+    width: 100%;
+  }
+
+  .project-detail__right {
+    display: block;
+    justify-content: flex-start;
+  }
+
+  .project-detail__right::before {
+    display: none;
+  }
+
+  .project-detail__back {
+    display: inline-flex;
+    align-items: center;
+  }
+}

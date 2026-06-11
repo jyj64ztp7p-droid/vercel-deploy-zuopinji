@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://YOUR_USERNAME.github.io/portfolio/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://YOUR_USERNAME.github.io/portfolio/works-index.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://YOUR_USERNAME.github.io/portfolio/about.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://YOUR_USERNAME.github.io/portfolio/project-detail-1.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://YOUR_USERNAME.github.io/portfolio/project-detail-2.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://YOUR_USERNAME.github.io/portfolio/project-detail-3.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://YOUR_USERNAME.github.io/portfolio/project-detail-4.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://YOUR_USERNAME.github.io/portfolio/project-detail-5.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+</urlset>
