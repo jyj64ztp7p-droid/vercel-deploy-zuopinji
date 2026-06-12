@@ -30,6 +30,7 @@
   cursor: none !important;
 }
 
+
 .project-detail__thumb {
   position: relative;
   width: 785px;
@@ -134,65 +135,70 @@
   text-transform: uppercase;
 }
 
-body.project-detail-page--web3 .project-detail {
+body.project-detail-page .project-detail {
   display: block;
   min-height: calc(100vh - var(--header-h));
-  padding-bottom: 16rem;
 }
 
-body.project-detail-page--web3 .project-detail__left {
+body.project-detail-page .project-detail__left {
   position: fixed;
   top: var(--header-h);
   left: 0;
+  width: 785px;
   height: calc(100vh - var(--header-h));
+  min-height: calc(100vh - var(--header-h));
 }
 
-body.project-detail-page--web3 .project-detail__right {
+body.project-detail-page .project-detail__thumb,
+body.project-detail-page .project-detail__thumb img {
+  width: 785px;
+}
+
+body.project-detail-page .project-detail__right {
   margin-left: 785px;
-  padding-bottom: 16rem;
   justify-content: flex-start;
 }
 
-body.project-detail-page--web3 .project-detail__right::before {
+body.project-detail-page .project-detail__right::before {
   position: fixed;
   left: 785px;
   top: var(--header-h);
   bottom: 0;
 }
 
+body.project-detail-page .pd-stack-wrap {
+  width: 100%;
+  max-width: none;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+body.project-detail-page .pd-stack {
+  width: 1134px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: 0;
+  transform: none !important;
+}
+
+body.project-detail-page .site-header__avatar {
+  display: block;
+}
+
+
 @media (max-width: 1024px) {
   .project-detail {
-    grid-template-columns: 1fr;
     min-height: auto;
   }
 
   .project-detail__left {
-    position: sticky;
-    top: var(--header-h);
-    width: 100%;
-    min-height: 0;
-    height: auto;
-    padding-top: 0;
-    cursor: pointer;
-    border-right: 0;
-    border-bottom: 1px solid var(--divider);
-    z-index: 20;
-    align-items: center;
-  }
-
-  .project-detail__thumb {
-    width: 100%;
-    max-width: 785px;
-    margin: 0 auto;
-  }
-
-  .project-detail__thumb img {
-    width: 100%;
+    display: none;
   }
 
   .project-detail__right {
     display: block;
     justify-content: flex-start;
+    margin-left: 0;
   }
 
   .project-detail__right::before {
@@ -202,5 +208,13 @@ body.project-detail-page--web3 .project-detail__right::before {
   .project-detail__back {
     display: inline-flex;
     align-items: center;
+  }
+
+  .pd-stack-wrap,
+  .pd-stack {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 }

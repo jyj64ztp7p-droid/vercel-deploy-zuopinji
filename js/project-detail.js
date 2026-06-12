@@ -44,54 +44,17 @@ function initHomeTitleAnim() {
   });
 }
 
-function initPdStackScale() {
-  const right = document.querySelector('.project-detail__right');
-  const stack = document.querySelector('.pd-stack');
-  if (!right || !stack) return;
-
-  let wrap = stack.parentElement;
-  if (!wrap?.classList.contains('pd-stack-wrap')) {
-    wrap = document.createElement('div');
-    wrap.className = 'pd-stack-wrap';
-    stack.parentElement.insertBefore(wrap, stack);
-    wrap.appendChild(stack);
-  }
-
-  const images = [...stack.querySelectorAll('img')];
-  let pending = images.filter((img) => !img.complete).length;
-
-  const update = () => {
-    const available = right.clientWidth;
-    const scale = Math.min(1, available / PD_DESIGN_W);
-    stack.style.transform = scale < 1 ? `scale(${scale})` : 'none';
-    wrap.style.height = scale < 1 ? `${stack.offsetHeight * scale}px` : 'auto';
-  };
-
-  const schedule = () => requestAnimationFrame(update);
-
-  if (pending === 0) schedule();
-  else {
-    images.forEach((img) => {
-      img.addEventListener('load', () => {
-        pending -= 1;
-        if (pending <= 0) schedule();
-      }, { once: true });
-    });
-  }
-
-  window.addEventListener('resize', schedule);
-  if (document.fonts?.ready) document.fonts.ready.then(schedule);
-}
-
-
 function initCursorLabel() {
   const left = document.querySelector('.project-detail__left');
   if (!left) return;
 
-  const label = document.createElement('div');
-  label.className = 'project-detail__cursor-label';
-  label.innerHTML = '<span class="project-detail__cursor-dot" aria-hidden="true"></span><span class="project-detail__cursor-text">Close</span>';
-  document.body.appendChild(label);
+  let label = document.querySelector('.project-detail__cursor-label');
+  if (!label) {
+    label = document.createElement('div');
+    label.className = 'project-detail__cursor-label';
+    label.innerHTML = '<span class="project-detail__cursor-dot" aria-hidden="true"></span><span class="project-detail__cursor-text">Close</span>';
+    document.body.appendChild(label);
+  }
 
   let visibleTimer = null;
   let hideTimer = null;
@@ -148,6 +111,47 @@ function initCursorLabel() {
   left.addEventListener('mousemove', move);
   left.addEventListener('mouseleave', hide);
 }
+
+function initPdStackScale() {
+  const right = document.querySelector('.project-detail__right');
+  const stack = document.querySelector('.pd-stack');
+  if (!right || !stack) return;
+
+  let wrap = stack.parentElement;
+  if (!wrap?.classList.contains('pd-stack-wrap')) {
+    wrap = document.createElement('div');
+    wrap.className = 'pd-stack-wrap';
+    stack.parentElement.insertBefore(wrap, stack);
+    wrap.appendChild(stack);
+  }
+
+  const images = [...stack.querySelectorAll('img')];
+  let pending = images.filter((img) => !img.complete).length;
+
+  const update = () => {
+    const available = right.clientWidth;
+    const scale = Math.min(1, available / PD_DESIGN_W);
+    stack.style.transform = scale < 1 ? `scale(${scale})` : 'none';
+    stack.style.width = `${PD_DESIGN_W}px`;
+    wrap.style.height = scale < 1 ? `${stack.offsetHeight * scale}px` : 'auto';
+  };
+
+  const schedule = () => requestAnimationFrame(update);
+
+  if (pending === 0) schedule();
+  else {
+    images.forEach((img) => {
+      img.addEventListener('load', () => {
+        pending -= 1;
+        if (pending <= 0) schedule();
+      }, { once: true });
+    });
+  }
+
+  window.addEventListener('resize', schedule);
+  if (document.fonts?.ready) document.fonts.ready.then(schedule);
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
   initHomeTitleAnim();
